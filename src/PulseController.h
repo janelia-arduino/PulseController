@@ -38,6 +38,8 @@ public:
   PulseController();
   virtual void setup();
 
+  void pulse();
+
 private:
   modular_server::Property properties_[pulse_controller::constants::PROPERTY_COUNT_MAX];
   modular_server::Parameter parameters_[pulse_controller::constants::PARAMETER_COUNT_MAX];
@@ -45,6 +47,7 @@ private:
   modular_server::Callback callbacks_[pulse_controller::constants::CALLBACK_COUNT_MAX];
 
   // Handlers
+  void pulseHandler(modular_server::Interrupt * interrupt_ptr);
 
 };
 

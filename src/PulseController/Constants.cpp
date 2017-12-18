@@ -29,12 +29,15 @@ const modular_server::FirmwareInfo firmware_info =
 // Units
 
 // Properties
+CONSTANT_STRING(pulse_channels_property_name,"pulseChannels");
+const long pulse_channels_default[power_switch_controller::constants::CHANNEL_COUNT] = {0};
 
 // Parameters
 
 // Functions
 
 // Callbacks
+CONSTANT_STRING(pulse_callback_name,"pulse");
 
 // Errors
 }

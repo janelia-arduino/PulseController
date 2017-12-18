@@ -16,7 +16,7 @@ namespace pulse_controller
 namespace constants
 {
 //MAX values must be >= 1, >= created/copied count, < RAM limit
-enum{PROPERTY_COUNT_MAX=1};
+enum{PROPERTY_COUNT_MAX=5};
 enum{PARAMETER_COUNT_MAX=1};
 enum{FUNCTION_COUNT_MAX=1};
 enum{CALLBACK_COUNT_MAX=1};
@@ -32,12 +32,18 @@ extern const modular_server::FirmwareInfo firmware_info;
 
 // Properties
 // Property values must be long, double, bool, long[], double[], bool[], char[], ConstantString *, (ConstantString *)[]
+extern ConstantString pulse_channels_property_name;
+extern const long pulse_channels_default[power_switch_controller::constants::CHANNEL_COUNT];
+
+extern ConstantString pulse_delay_property_name;
+extern const long pulse_delay_default;
 
 // Parameters
 
 // Functions
 
 // Callbacks
+extern ConstantString pulse_callback_name;
 
 // Errors
 }
