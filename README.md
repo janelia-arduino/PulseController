@@ -27,6 +27,25 @@ License:
 ## API NAMES
 
 ```json
+{
+  "id": "getApi",
+  "result": {
+    "firmware": [
+      "PulseController"
+    ],
+    "verbosity": "NAMES",
+    "properties": [
+      "pulseChannels",
+      "pulseDelay",
+      "pulsePeriod",
+      "pulseOnDuration",
+      "pulseCount"
+    ],
+    "callbacks": [
+      "pulse"
+    ]
+  }
+}
 ```
 
 ## API GENERAL
