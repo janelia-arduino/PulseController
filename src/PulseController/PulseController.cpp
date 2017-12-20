@@ -81,12 +81,11 @@ void PulseController::setup()
 void PulseController::pulse()
 {
   modular_server::Property & pulse_channels_property = modular_server_.property(constants::pulse_channels_property_name);
-  size_t array_length = pulse_channels_property.getArrayLength();
-  long pulse_channels[array_length];
-  pulse_channels_property.getValue(pulse_channels,array_length);
+  Array<long,power_switch_controller::constants::CHANNEL_COUNT> pulse_channels;
+  pulse_channels_property.getValue(pulse_channels);
   uint32_t channels = 0;
   uint32_t bit = 1;
-  for (size_t i=0; i<array_length; ++i)
+  for (size_t i=0; i<pulse_channels.size(); ++i)
   {
     long channel = pulse_channels[i];
     channels |= bit << channel;
