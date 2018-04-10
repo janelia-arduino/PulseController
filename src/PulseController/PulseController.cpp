@@ -73,8 +73,8 @@ void PulseController::setup()
   // Callbacks
   modular_server::Callback & pulse_callback = modular_server_.createCallback(constants::pulse_callback_name);
   pulse_callback.attachFunctor(makeFunctor((Functor1<modular_server::Pin *> *)0,*this,&PulseController::pulseHandler));
-  pulse_callback.attachTo(bnc_a_pin,modular_server::pin::mode_falling);
-  pulse_callback.attachTo(btn_a_pin,modular_server::pin::mode_falling);
+  pulse_callback.attachTo(bnc_a_pin,modular_server::constants::pin_mode_interrupt_falling);
+  pulse_callback.attachTo(btn_a_pin,modular_server::constants::pin_mode_interrupt_falling);
 
 }
 
