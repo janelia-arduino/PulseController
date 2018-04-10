@@ -16,7 +16,7 @@ namespace pulse_controller
 {
 namespace constants
 {
-// Interrupts
+// Pins
 
 // Units
 

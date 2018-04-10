@@ -37,7 +37,7 @@ private:
   modular_server::Callback callbacks_[pulse_controller::constants::CALLBACK_COUNT_MAX];
 
   // Handlers
-  void pulseHandler(modular_server::Interrupt * interrupt_ptr);
+  void pulseHandler(modular_server::Pin * pin_ptr);
 
 };
 

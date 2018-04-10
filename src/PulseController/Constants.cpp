@@ -17,14 +17,14 @@ CONSTANT_STRING(device_name,"pulse_controller");
 CONSTANT_STRING(firmware_name,"PulseController");
 // Use semantic versioning http://semver.org/
 const modular_server::FirmwareInfo firmware_info =
-  {
-    .name_ptr=&firmware_name,
-    .version_major=1,
-    .version_minor=0,
-    .version_patch=1,
-  };
+{
+  .name_ptr=&firmware_name,
+  .version_major=1,
+  .version_minor=0,
+  .version_patch=1,
+};
 
-// Interrupts
+// Pins
 
 // Units
 

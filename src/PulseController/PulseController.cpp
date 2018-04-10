@@ -29,13 +29,13 @@ void PulseController::setup()
 
   // Add Hardware
 
-  // Interrupts
-  modular_server::Interrupt & bnc_a_interrupt = modular_server_.interrupt(modular_device_base::constants::bnc_a_interrupt_name);
-  modular_server::Interrupt & btn_a_interrupt = modular_server_.interrupt(modular_device_base::constants::btn_a_interrupt_name);
+  // Pins
+  modular_server::Pin & bnc_a_pin = modular_server_.pin(modular_device_base::constants::bnc_a_pin_name);
+  modular_server::Pin & btn_a_pin = modular_server_.pin(modular_device_base::constants::btn_a_pin_name);
 
 #if defined(__MK64FX512__)
-  modular_server::Interrupt & bnc_b_interrupt = modular_server_.interrupt(modular_device_base::constants::bnc_b_interrupt_name);
-  modular_server::Interrupt & btn_b_interrupt = modular_server_.interrupt(modular_device_base::constants::btn_b_interrupt_name);
+  modular_server::Pin & bnc_b_pin = modular_server_.pin(modular_device_base::constants::bnc_b_pin_name);
+  modular_server::Pin & btn_b_pin = modular_server_.pin(modular_device_base::constants::btn_b_pin_name);
 #endif
 
   // Add Firmware
@@ -72,9 +72,9 @@ void PulseController::setup()
 
   // Callbacks
   modular_server::Callback & pulse_callback = modular_server_.createCallback(constants::pulse_callback_name);
-  pulse_callback.attachFunctor(makeFunctor((Functor1<modular_server::Interrupt *> *)0,*this,&PulseController::pulseHandler));
-  pulse_callback.attachTo(bnc_a_interrupt,modular_server::interrupt::mode_falling);
-  pulse_callback.attachTo(btn_a_interrupt,modular_server::interrupt::mode_falling);
+  pulse_callback.attachFunctor(makeFunctor((Functor1<modular_server::Pin *> *)0,*this,&PulseController::pulseHandler));
+  pulse_callback.attachTo(bnc_a_pin,modular_server::pin::mode_falling);
+  pulse_callback.attachTo(btn_a_pin,modular_server::pin::mode_falling);
 
 }
 
@@ -128,7 +128,7 @@ void PulseController::pulse()
 // modular_server_.property(property_name).getElementValue(element_index,value) value type must match the property array element default type
 // modular_server_.property(property_name).setElementValue(element_index,value) value type must match the property array element default type
 
-void PulseController::pulseHandler(modular_server::Interrupt * interrupt_ptr)
+void PulseController::pulseHandler(modular_server::Pin * pin_ptr)
 {
   pulse();
 }
