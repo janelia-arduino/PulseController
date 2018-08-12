@@ -3,7 +3,7 @@
 //
 //
 // Authors:
-// Peter Polidoro polidorop@janelia.hhmi.org
+// Peter Polidoro peterpolidoro@gmail.com
 // ----------------------------------------------------------------------------
 #ifndef PULSE_CONTROLLER_CONSTANTS_H
 #define PULSE_CONTROLLER_CONSTANTS_H
