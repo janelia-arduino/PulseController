@@ -40,10 +40,10 @@ void PulseController::setup()
 
   // Add Firmware
   modular_server_.addFirmware(constants::firmware_info,
-                              properties_,
-                              parameters_,
-                              functions_,
-                              callbacks_);
+    properties_,
+    parameters_,
+    functions_,
+    callbacks_);
 
   // Properties
   modular_server::Property & pulse_channels_property = modular_server_.createProperty(constants::pulse_channels_property_name,constants::pulse_channels_default);
@@ -104,10 +104,10 @@ void PulseController::pulse()
   modular_server_.property(constants::pulse_count_property_name).getValue(count);
 
   addPwm(channels,
-         delay,
-         period,
-         on_duration,
-         count);
+    delay,
+    period,
+    on_duration,
+    count);
 }
 
 // Handlers must be non-blocking (avoid 'delay')
