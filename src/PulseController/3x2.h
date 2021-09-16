@@ -3,7 +3,7 @@
 //
 //
 // Authors:
-// Peter Polidoro peterpolidoro@gmail.com
+// Peter Polidoro peter@polidoro.io
 // ----------------------------------------------------------------------------
 #ifndef PULSE_CONTROLLER_3X2_CONSTANTS_H
 #define PULSE_CONTROLLER_3X2_CONSTANTS_H
